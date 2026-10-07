@@ -317,11 +317,11 @@ One physical member of Po1 was disconnected/shut down.
 
 The logical Port-channel remained operational because the second physical LACP member was still forwarding.
 
-![Po1 member down but port-channel still up](24-failover-po1-member-down-still-su.png)
+![Po1 member down but port-channel still up](Screenshot/24-failover-po1-member-down-still-su.png)
 
 A continuous ping recorded only a very small interruption during reconvergence.
 
-![Po1 failover ping](25-failover-po1-ping-one-drop.png)
+![Po1 failover ping](Screenshot/25-failover-po1-ping-one-drop.png)
 
 **Result:** PASS — Po1 remained available after loss of one member link.
 
@@ -331,13 +331,13 @@ A continuous ping recorded only a very small interruption during reconvergence.
 
 ### Baseline
 
-![Po2 baseline](26-failover-po2-baseline-su.png)
+![Po2 baseline](Screenshot/26-failover-po2-baseline-su.png)
 
 ### Failure
 
 One Po2 member was taken down while a continuous ping was running.
 
-![Po2 member failure and ping test](27-failover-po2-member-down-ping-drop.png)
+![Po2 member failure and ping test](Screenshot/27-failover-po2-member-down-ping-drop.png)
 
 **Result:** PASS — traffic recovered through the remaining Po2 member with only a brief interruption.
 
@@ -349,7 +349,7 @@ The Active 3850 was powered off while traffic was continuously monitored.
 
 The Standby member assumed the stack control role and forwarding continued.
 
-![Active member power-off test](28-failover-active-member-poweroff-zero-loss.png)
+![Active member power-off test](Screenshot/28-failover-active-member-poweroff-zero-loss.png)
 
 **Result:** PASS — the stack survived loss of the Active member and the captured test showed continuous reachability.
 
@@ -359,7 +359,7 @@ The Standby member assumed the stack control role and forwarding continued.
 
 A PSU failure/removal scenario was tested while connectivity was monitored.
 
-![PSU fault test](28-failover-psu-fault-zero-loss.png)
+![PSU fault test](Screenshot/28-failover-psu-fault-zero-loss.png)
 
 **Result:** PASS — the switch remained operational using the available power source and connectivity stayed available during the test.
 
@@ -375,7 +375,7 @@ show switch stack-ports
 
 The stack continued operating through the remaining StackWise path.
 
-![StackWise ring failure test](29-failover-stackwise-ring-down-zero-loss.png)
+![StackWise ring failure test](Screenshot/29-failover-stackwise-ring-down-zero-loss.png)
 
 **Result:** PASS — the stack remained functional with a single StackWise link failure.
 
