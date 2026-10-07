@@ -91,7 +91,7 @@ The router output confirms that both routed VLAN networks are reached through th
 
 The two Catalyst 3850 switches were connected using StackWise cables to form a redundant ring. Power and console connectivity were also established for initial setup and verification.
 
-![Physical StackWise cabling](01-physical-stack-cabling-console-power.jpg)
+![Physical StackWise cabling](Screenshot/01-physical-stack-cabling-console-power.jpg)
 
 ### Recommended StackWise ring connection
 
@@ -112,7 +112,7 @@ Before the second member and both stack links were fully available, the StackWis
 show switch stack-ports
 ```
 
-![Stack ports down before ring forms](02-stack-ports-down-before-ring-forms.png)
+![Stack ports down before ring forms](Screenshot/02-stack-ports-down-before-ring-forms.png)
 
 ---
 
@@ -132,7 +132,7 @@ Switch#   Port1   Port2
 2         OK      OK
 ```
 
-![Stack ports up and switch 2 added](03-stack-ports-up-switch2-added.png)
+![Stack ports up and switch 2 added](Screenshot/03-stack-ports-up-switch2-added.png)
 
 ---
 
@@ -140,7 +140,7 @@ Switch#   Port1   Port2
 
 The stack performed a role election to decide which member would become Active and which would remain Standby.
 
-![Stack role election](04-show-switch-role-electing.png)
+![Stack role election](Screenshot/04-show-switch-role-electing.png)
 
 The final stack state was:
 
@@ -153,7 +153,7 @@ The final stack state was:
 show switch detail
 ```
 
-![Active and standby stack members](05-show-switch-detail-active-standby.png)
+![Active and standby stack members](Screenshot/05-show-switch-detail-active-standby.png)
 
 Using different priorities makes the preferred Active member predictable after a reboot or election.
 
@@ -167,7 +167,7 @@ Stack power / PSU status was checked to confirm that the switch members had oper
 show stack-power
 ```
 
-![Stack power verification](06-show-stack-power-dual-supply.png)
+![Stack power verification](Screenshot/06-show-stack-power-dual-supply.png)
 
 ---
 
@@ -202,7 +202,7 @@ Where:
 - `U` = in use
 - `P` = member bundled in the port-channel
 
-![Stack and EtherChannel baseline](08-baseline-hostname-switch-etherchannel.png)
+![Stack and EtherChannel baseline](Screenshot/08-baseline-hostname-switch-etherchannel.png)
 
 This design provides one physical EtherChannel member from each stack switch. Losing one link or even one stack member therefore does not automatically remove the entire logical port-channel.
 
@@ -218,9 +218,9 @@ The monitoring portion of the lab was used to understand the difference between 
 
 The client accessed public HTTPS websites to generate normal browser traffic.
 
-![Tor Project browsing test](09-scenario1-browse-torproject-org.png)
+![Tor Project browsing test](Screenshot/09-scenario1-browse-torproject-org.png)
 
-![DuckDuckGo browsing test](10-scenario1-browse-duckduckgo-com.png)
+![DuckDuckGo browsing test](Screenshot/10-scenario1-browse-duckduckgo-com.png)
 
 ### DNS confirmation
 
@@ -231,15 +231,15 @@ nslookup torproject.org
 nslookup duckduckgo.com
 ```
 
-![DNS lookup confirmation](11-scenario1-nslookup-dns-confirmation.png)
+![DNS lookup confirmation](Screenshot/11-scenario1-nslookup-dns-confirmation.png)
 
 ### TLS inspection
 
 Wireshark was then used to inspect TLS handshakes and identify the requested hostname through the Server Name Indication field where visible.
 
-![TLS SNI - torproject.org](12-scenario1-wireshark-tls-sni-torproject.png)
+![TLS SNI - torproject.org](Screenshot/12-scenario1-wireshark-tls-sni-torproject.png)
 
-![TLS SNI - duckduckgo.com](13-scenario1-wireshark-tls-sni-duckduckgo.png)
+![TLS SNI - duckduckgo.com](Screenshot/13-scenario1-wireshark-tls-sni-duckduckgo.png)
 
 ### Learning outcome
 
@@ -251,35 +251,35 @@ Even when application payloads are encrypted by HTTPS, network metadata can stil
 
 A browser download was used to generate sustained high-volume traffic.
 
-![Browser download history](14-scenario2-download-chrome-history.png)
+![Browser download history](Screenshot/14-scenario2-download-chrome-history.png)
 
 ### Capture before download
 
-![Wireshark before download](15-scenario2-wireshark-before-download.png)
+![Wireshark before download](Screenshot/15-scenario2-wireshark-before-download.png)
 
 ### Capture during download
 
-![Wireshark during download](16-scenario2-wireshark-during-download.png)
+![Wireshark during download](Screenshot/16-scenario2-wireshark-during-download.png)
 
 ### Capture after download
 
-![Wireshark after download](17-scenario2-wireshark-after-download.png)
+![Wireshark after download](Screenshot/17-scenario2-wireshark-after-download.png)
 
 ### Conversations statistics
 
 Wireshark **Statistics → Conversations** was used to identify the flows that transferred the largest amount of data.
 
-![Conversations table by bytes](18-scenario2-conversations-table-bytes.png)
+![Conversations table by bytes](Screenshot/18-scenario2-conversations-table-bytes.png)
 
 The same view was also checked using bitrate to identify the most active high-throughput conversation.
 
-![Conversations table by bitrate](19-scenario2-conversations-table-bitrate.png)
+![Conversations table by bitrate](Screenshot/19-scenario2-conversations-table-bitrate.png)
 
 ### I/O Graph
 
 The I/O graph clearly shows the download as a strong traffic spike compared with the low-volume baseline.
 
-![Download I/O graph spike](20-scenario2-io-graph-download-spike.jpg)
+![Download I/O graph spike](Screenshot/20-scenario2-io-graph-download-spike.jpg)
 
 ### Learning outcome
 
@@ -291,11 +291,11 @@ A file download generally creates a more obvious sustained throughput pattern th
 
 A YouTube video was played to create a streaming workload.
 
-![YouTube streaming test](21-scenario3-youtube-streaming-test.png)
+![YouTube streaming test](Screenshot/21-scenario3-youtube-streaming-test.png)
 
 The I/O graph showed multiple bursts rather than one continuous flat transfer. This behavior is typical of buffered streaming: the client downloads chunks, fills the playback buffer, pauses briefly, and then requests more data.
 
-![Streaming I/O graph bursts](22-scenario3-io-graph-streaming-bursts.jpg)
+![Streaming I/O graph bursts](Screenshot/22-scenario3-io-graph-streaming-bursts.jpg)
 
 ---
 
@@ -309,7 +309,7 @@ The most important part of this lab was confirming that the stack and EtherChann
 
 Both Po1 and Po2 started in the `SU` state with all LACP members bundled.
 
-![Failover baseline - Po1 and Po2](23-failover-baseline-po1-po2-su.png)
+![Failover baseline - Po1 and Po2](Screenshot/23-failover-baseline-po1-po2-su.png)
 
 ### Failure
 
