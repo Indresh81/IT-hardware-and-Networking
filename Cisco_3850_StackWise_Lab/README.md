@@ -81,7 +81,7 @@ flowchart TD
 
 The router output confirms that both routed VLAN networks are reached through the 3850 stack at `192.168.55.10`.
 
-![Router IP and routing table](07-router-show-ip-int-brief-route.png)
+![Router IP and routing table](Screenshot/07-router-show-ip-int-brief-route.png)
 
 ---
 
