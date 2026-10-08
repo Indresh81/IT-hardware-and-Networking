@@ -133,7 +133,7 @@ The packet effectively enters FortiGate from the LAN and is sent back toward the
 
 The first step was to prepare the Windows server that would later be published through FortiGate.
 
-![IIS Windows Features](Screenshot/01-IIS-Windows-Features.png)
+![IIS Windows Features](Screenshots/01-IIS-Windows-Features.png)
 
 The Windows Features window shows the IIS components being enabled.
 
@@ -149,7 +149,7 @@ In this lab, HTTP on TCP port 80 is used as the test application.
 
 The IIS server network settings were checked with `ipconfig`.
 
-![IIS Server IP Configuration](Screenshot/02-IIS-Server-IP-Configuration.png)
+![IIS Server IP Configuration](Screenshots/02-IIS-Server-IP-Configuration.png)
 
 The screenshot shows:
 
@@ -179,7 +179,7 @@ Without a correct gateway, requests may reach the IIS server but replies to non-
 
 The IIS site was tested directly before introducing NAT.
 
-![Default IIS page](Screenshot/03-IIS-Default-Page-Initial-Test.png)
+![Default IIS page](Screenshots/03-IIS-Default-Page-Initial-Test.png)
 
 This screenshot confirms that IIS was running and the HTTP service was accessible.
 
@@ -205,7 +205,7 @@ Hairpin NAT works internally
 
 A custom test page was loaded through `localhost`.
 
-![Custom IIS local test](Screenshot/04-IIS-Custom-Page-Localhost-Test.png)
+![Custom IIS local test](Screenshots/04-IIS-Custom-Page-Localhost-Test.png)
 
 The page identifies the server as:
 
@@ -223,7 +223,7 @@ This custom page provides clearer visual evidence later when the same server is 
 
 The FortiGate interface page was checked before NAT configuration.
 
-![FortiGate interface summary](Screenshot/05-FortiGate-Interface-Summary.png)
+![FortiGate interface summary](Screenshots/05-FortiGate-Interface-Summary.png)
 
 Important visible settings include:
 
@@ -253,7 +253,7 @@ This allows the FortiGate to sit between the external test client and the intern
 
 The LAN side was configured as a FortiGate **Software Switch** named `LAN_INTERFACE`.
 
-![LAN software switch](Screenshot/06-LAN-Software-Switch-Configuration.png)
+![LAN software switch](Screenshots/06-LAN-Software-Switch-Configuration.png)
 
 Visible configuration:
 
@@ -285,7 +285,7 @@ while using the FortiGate as their gateway.
 
 An address object was created for the VIP-side address.
 
-![VIP external address object](Screenshot/07-VIP-External-Address-Object.png)
+![VIP external address object](Screenshots/07-VIP-External-Address-Object.png)
 
 This object is later used in policy matching.
 
@@ -295,7 +295,7 @@ This object is later used in policy matching.
 
 The external test client was also defined as a FortiGate address object.
 
-![External PC address object](Screenshot/08-External-PC-Address-Object.png)
+![External PC address object](Screenshots/08-External-PC-Address-Object.png)
 
 The external PC is used to prove that the normal WAN-to-LAN destination NAT is working before Hairpin NAT is attempted.
 
@@ -305,7 +305,7 @@ The external PC is used to prove that the normal WAN-to-LAN destination NAT is w
 
 The internal LAN subnet was created as an address object.
 
-![LAN subnet address object](Screenshot/09-LAN-Subnet-Address-Object.png)
+![LAN subnet address object](Screenshots/09-LAN-Subnet-Address-Object.png)
 
 The internal subnet is:
 
@@ -323,7 +323,7 @@ This object is later used as the source for the Hairpin NAT firewall policies.
 
 A FortiGate Virtual IP was configured to translate the external address to the private IIS server.
 
-![IIS HTTP VIP configuration](Screenshot/10-IIS-HTTP-VIP-Configuration.png)
+![IIS HTTP VIP configuration](Screenshots/10-IIS-HTTP-VIP-Configuration.png)
 
 Visible VIP settings:
 
@@ -366,7 +366,7 @@ FortiGate translates that connection to the real server.
 
 A firewall policy was created to allow the external PC to use the IIS VIP.
 
-![WAN to LAN IIS policy](Screenshot/11-WAN-to-LAN-IIS-Policy.png)
+![WAN to LAN IIS policy](Screenshots/11-WAN-to-LAN-IIS-Policy.png)
 
 Visible policy details include:
 
@@ -402,7 +402,7 @@ Both are required.
 
 The external client configuration was checked.
 
-![External PC IP configuration](Screenshot/12-External-PC-IP-Configuration.png)
+![External PC IP configuration](Screenshots/12-External-PC-IP-Configuration.png)
 
 The screenshot shows:
 
@@ -424,7 +424,7 @@ The external PC successfully opened:
 http://172.18.2.11
 ```
 
-![External VIP access success](Screenshot/13-External-VIP-Access-Success.png)
+![External VIP access success](Screenshots/13-External-VIP-Access-Success.png)
 
 The page confirms that the external/VIP address successfully reached the IIS server at:
 
@@ -450,7 +450,7 @@ At this point, the following are verified:
 
 A PowerShell TCP test was also performed against the VIP.
 
-![External VIP TCP 80 success](Screenshot/13A-External-VIP-TCP-Port-80-Test-Success.png)
+![External VIP TCP 80 success](Screenshots/13A-External-VIP-TCP-Port-80-Test-Success.png)
 
 The test uses:
 
@@ -484,7 +484,7 @@ Web browser/application problem
 
 PC2 was configured as the internal Hairpin NAT client.
 
-![PC2 IP configuration CLI](Screenshot/14-PC2-IP-Configuration-CLI.png)
+![PC2 IP configuration CLI](Screenshots/14-PC2-IP-Configuration-CLI.png)
 
 The visible values include:
 
@@ -500,7 +500,7 @@ Default Gateway : 192.168.18.1
 
 The same addressing was verified through the Windows GUI.
 
-![PC2 IP configuration GUI](Screenshot/15-PC2-IP-Configuration-GUI.png)
+![PC2 IP configuration GUI](Screenshots/15-PC2-IP-Configuration-GUI.png)
 
 Using both CLI and GUI verification provides additional evidence that the client was correctly placed on the internal LAN.
 
@@ -510,7 +510,7 @@ Using both CLI and GUI verification provides additional evidence that the client
 
 Before Hairpin NAT was tested, PC2 directly contacted the IIS server private address.
 
-![Direct LAN connectivity and HTTP test](Screenshot/16-Direct-LAN-Connectivity-and-HTTP-Test.png)
+![Direct LAN connectivity and HTTP test](Screenshots/16-Direct-LAN-Connectivity-and-HTTP-Test.png)
 
 The screenshot demonstrates both:
 
@@ -536,7 +536,7 @@ This step proves basic LAN connectivity first.
 
 PC2 successfully accessed the web server through its private address.
 
-![Direct LAN web access](Screenshot/17-Direct-LAN-Web-Access-Success.png)
+![Direct LAN web access](Screenshots/17-Direct-LAN-Web-Access-Success.png)
 
 The direct URL is:
 
@@ -564,7 +564,7 @@ PC2 then attempted to access the IIS server by using the external/VIP address:
 http://172.18.2.11
 ```
 
-![Before Hairpin VIP access failed](Screenshot/18-Before-Hairpin-VIP-Access-Failed.png)
+![Before Hairpin VIP access failed](Screenshots/18-Before-Hairpin-VIP-Access-Failed.png)
 
 The browser shows that the site could not be reached.
 
@@ -588,7 +588,7 @@ This is stronger evidence than simply showing the final successful result.
 
 The first Hairpin-related policy was created.
 
-![Hairpin policy 1](Screenshot/19-Hairpin-Policy-1-LAN-to-WAN.png)
+![Hairpin policy 1](Screenshots/19-Hairpin-Policy-1-LAN-to-WAN.png)
 
 Visible settings:
 
@@ -619,7 +619,7 @@ The screenshot also shows NAT enabled, meaning source translation is part of thi
 
 A second policy was created for the translated traffic.
 
-![Hairpin policy 2](Screenshot/20-Hairpin-Policy-2-LAN-to-LAN.png)
+![Hairpin policy 2](Screenshots/20-Hairpin-Policy-2-LAN-to-LAN.png)
 
 Visible settings:
 
@@ -661,7 +661,7 @@ This is the practical meaning of **Hairpin NAT** in this lab.
 
 The firewall policy list was checked after configuration.
 
-![Policy summary and hit counters](Screenshot/21-FortiGate-Policy-Summary-and-Hit-Counters.png)
+![Policy summary and hit counters](Screenshots/21-FortiGate-Policy-Summary-and-Hit-Counters.png)
 
 ### Why hit counters matter
 
@@ -699,7 +699,7 @@ http://172.18.2.11
 
 successfully.
 
-![After Hairpin VIP access success](Screenshot/22-After-Hairpin-VIP-Access-Success.png)
+![After Hairpin VIP access success](Screenshots/22-After-Hairpin-VIP-Access-Success.png)
 
 The web page identifies:
 
@@ -737,7 +737,7 @@ Packet captures were collected to compare the different traffic flows and provid
 
 ## 23. Direct LAN Capture — PC2 Side
 
-![Direct LAN PC2 capture](Screenshot/23-Direct-LAN-PC2-Capture.png)
+![Direct LAN PC2 capture](Screenshots/23-Direct-LAN-PC2-Capture.png)
 
 This capture represents PC2 directly accessing the private IIS address.
 
@@ -759,7 +759,7 @@ This gives a baseline TCP session to compare against NAT traffic.
 
 ## 24. Direct LAN Capture — IIS Server Side
 
-![Direct LAN IIS server capture](Screenshot/24-Direct-LAN-IIS-Server-Capture.png)
+![Direct LAN IIS server capture](Screenshots/24-Direct-LAN-IIS-Server-Capture.png)
 
 The IIS-side capture confirms that the server received direct HTTP/TCP traffic from the internal LAN client.
 
@@ -769,7 +769,7 @@ Using captures at both endpoints helps verify that the expected packets are actu
 
 ## 25. External VIP Capture — External PC
 
-![External VIP external PC capture](Screenshot/25-External-VIP-External-PC-Capture.png)
+![External VIP external PC capture](Screenshots/25-External-VIP-External-PC-Capture.png)
 
 This capture represents the external client communicating with:
 
@@ -785,7 +785,7 @@ The client does not see `192.168.18.100` as its destination.
 
 ## 26. External VIP Capture — IIS Server
 
-![External VIP IIS server capture](Screenshot/26-External-VIP-IIS-Server-Capture.png)
+![External VIP IIS server capture](Screenshots/26-External-VIP-IIS-Server-Capture.png)
 
 On the IIS side, the session arrives after FortiGate has performed destination translation.
 
@@ -805,7 +805,7 @@ FortiGate modifies the relevant address information while maintaining the logica
 
 Before the Hairpin configuration was working, PC2 showed TCP SYN retransmissions.
 
-![Before Hairpin SYN retransmissions](Screenshot/27-Before-Hairpin-PC2-SYN-Retransmissions.png)
+![Before Hairpin SYN retransmissions](Screenshots/27-Before-Hairpin-PC2-SYN-Retransmissions.png)
 
 ### What SYN retransmissions mean
 
@@ -832,7 +832,7 @@ It proves that the problem existed below the HTTP page itself—the TCP connecti
 
 After the Hairpin policies were added, another capture was collected on PC2.
 
-![After Hairpin PC2 capture](Screenshot/28-After-Hairpin-PC2-Capture.png)
+![After Hairpin PC2 capture](Screenshots/28-After-Hairpin-PC2-Capture.png)
 
 The successful capture shows the TCP exchange occurring when PC2 accesses the VIP.
 
@@ -856,7 +856,7 @@ This abstraction is one of the main purposes of NAT.
 
 The IIS-side packet capture was also checked after Hairpin NAT became operational.
 
-![After Hairpin IIS server capture](Screenshot/29-After-Hairpin-IIS-Server-Capture.png)
+![After Hairpin IIS server capture](Screenshots/29-After-Hairpin-IIS-Server-Capture.png)
 
 This provides server-side evidence that the translated session successfully reached IIS.
 
