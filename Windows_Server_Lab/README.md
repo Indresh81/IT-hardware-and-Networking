@@ -1,4 +1,4 @@
-# Windows Server Infrastructure Lab Portfolio
+# Windows Server Infrastructure Lab 
 
 ## Overview
 
