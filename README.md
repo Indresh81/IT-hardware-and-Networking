@@ -55,12 +55,12 @@ Some labs ran in Packet Tracer and the rest on physical devices. Each lab below 
 
 ESXi 8.0.3 installed bare-metal on a DL360 Gen9 with two Xeon E5-2680 v4 CPUs and 31.9 GiB RAM, managed through iLO 4 and the ESXi Host Client. POST showed an uncorrectable memory error on Processor 2, DIMM 12, which was documented as a real hardware fault. The host has a 2.06 TB VMFS6 datastore.
 
-![Server front panel](Windows_Server_ESXi_Lab/Screenshots/server-front.jpg)
-![Server internals](Windows_Server_ESXi_Lab/Screenshots/server-internals.jpg)
-![ESXi boot screen](Windows_Server_ESXi_Lab/Screenshots/esxi-boot.jpg)
-![POST screen with iLO IP and DIMM error](Windows_Server_ESXi_Lab/Screenshots/post-screen-ilo-dimm-error.jpg)
-![ESXi Host Client dashboard](Windows_Server_ESXi_Lab/Screenshots/esxi-dashboard.png)
-![VMFS6 datastore](Windows_Server_ESXi_Lab/Screenshots/storage.png)
+![Server front panel](Windows_Server_ESXi_Lab/Screenshot/server-front.jpg)
+![Server internals](Windows_Server_ESXi_Lab/Screenshot/server-internals.jpg)
+![ESXi boot screen](Windows_Server_ESXi_Lab/Screenshot/esxi-boot.jpg)
+![POST screen with iLO IP and DIMM error](Windows_Server_ESXi_Lab/Screenshot/post-screen-ilo-dimm-error.jpg)
+![ESXi Host Client dashboard](Windows_Server_ESXi_Lab/Screenshot/esxi-dashboard.png)
+![VMFS6 datastore](Windows_Server_ESXi_Lab/Screenshot/storage.png)
 
 ---
 
@@ -68,7 +68,7 @@ ESXi 8.0.3 installed bare-metal on a DL360 Gen9 with two Xeon E5-2680 v4 CPUs an
 
 Switch SSH logins are authenticated by RADIUS. With the first RADIUS server unreachable, the switch retries, then fails over to the second server and receives an Access-Accept with privilege level 15.
 
-![RADIUS failover debug with Access-Accept](AD_Failover_and_AAA_Lab/Screenshots/Lab-02_013_SSH-Debug-Failover-to-DC02-Access-Accept.png)
+![RADIUS failover debug with Access-Accept](AD_Failover_and_AAA_Lab/Screenshot/Lab-02_013_SSH-Debug-Failover-to-DC02-Access-Accept.png)
 
 ---
 
@@ -76,7 +76,7 @@ Switch SSH logins are authenticated by RADIUS. With the first RADIUS server unre
 
 After the root port Fa0/1 goes down, the blocked alternate port Fa0/2 becomes the new root port and moves to forwarding.
 
-![STP failover, BLK to FWD](Cisco_Labs/Screenshots/sw1-failover-blk-to-fwd.png)
+![STP failover, BLK to FWD](Cisco_Labs/Screenshot/sw1-failover-blk-to-fwd.png)
 
 ---
 
@@ -84,8 +84,8 @@ After the root port Fa0/1 goes down, the blocked alternate port Fa0/2 becomes th
 
 A Cisco 1921 ISR and a Catalyst 3560-CX, connected by console cable and used as a router plus Layer 3 switch pair. An ACL policy isolates the IT, HR and other VLANs from each other, verified with sourced pings from each SVI.
 
-![Router and switch on the bench](Cisco_Real_Hardware/Screenshots/hardware-full-lab-overview.jpg)
-![ACL isolation verified with sourced pings](Cisco_Real_Hardware/Screenshots/switch-acl-isolation-verified.png)
+![Router and switch on the bench](Cisco_Real_Hardware/Screenshot/hardware-full-lab-overview.jpg)
+![ACL isolation verified with sourced pings](Cisco_Real_Hardware/Screenshot/switch-acl-isolation-verified.png)
 
 ---
 
@@ -93,7 +93,7 @@ A Cisco 1921 ISR and a Catalyst 3560-CX, connected by console cable and used as 
 
 The stack shows an Active and a Standby member, both stack ports OK, and two LACP port-channels bundled across members (Gi1/0/x and Gi2/0/x).
 
-![Stack and EtherChannel baseline](Cisco_3850_EtherChannel_Stack_Lab/Screenshots/08-baseline-hostname-switch-etherchannel.png)
+![Stack and EtherChannel baseline](Cisco_3850_EtherChannel_Stack_Lab/Screenshot/08-baseline-hostname-switch-etherchannel.png)
 
 ---
 
@@ -101,8 +101,8 @@ The stack shows an Active and a Standby member, both stack ports OK, and two LAC
 
 Two FortiGate 300D units in an HA cluster. The first view shows both synchronized with FW1-HA as Primary (priority 200). After a failover, FW2-HA is Primary and FW1-HA is listed as Secondary, Out of sync while it rejoins.
 
-![HA cluster synchronized](FortiGate_Active-Passive-HA/Screenshots/12_ha_cluster_both_synchronized.png)
-![FW1 out of sync after power restore](FortiGate_Active-Passive-HA/Screenshots/35_fw1_out_of_sync_after_power_restore.png)
+![HA cluster synchronized](FortiGate_Active-Passive-HA/Screenshot/12_ha_cluster_both_synchronized.png)
+![FW1 out of sync after power restore](FortiGate_Active-Passive-HA/Screenshot/35_fw1_out_of_sync_after_power_restore.png)
 
 ---
 
@@ -119,7 +119,7 @@ An internal client reaches the IIS server (192.168.18.100) through its external 
 
 Two MR36 access points powered from a Meraki switch.
 
-![Two MR36 access points](Cisco_Meraki_MR36_Wireless/Screenshots/01-Two-Cisco-Meraki-MR36-Access-Points.jpeg)
+![Two MR36 access points](Cisco_Meraki_MR36_Wireless/Screenshot/01-Two-Cisco-Meraki-MR36-Access-Points.jpeg)
 
 ---
 
@@ -127,7 +127,7 @@ Two MR36 access points powered from a Meraki switch.
 
 ISE live logs show the IT user authorised into VLAN 10 and the HR user authorised into VLAN 20. An earlier HR attempt was denied until the endpoint met the approved-group condition.
 
-![ISE live logs, IT and HR results](Cisco_ISE_Access_Control/Screenshots/44-Cisco-ISE-Live-Logs-IT-and-HR-EAPTLS-Results.png)
+![ISE live logs, IT and HR results](Cisco_ISE_Access_Control/Screenshot/44-Cisco-ISE-Live-Logs-IT-and-HR-EAPTLS-Results.png)
 
 ---
 
@@ -135,8 +135,8 @@ ISE live logs show the IT user authorised into VLAN 10 and the HR user authorise
 
 The ARP broadcast resolving a MAC address before the first ping, and the switch MAC address table filling with dynamic entries once traffic flows.
 
-![ARP request before ICMP](Wireshark_Traffic_Analysis/Screenshots/02_arp_request_frame16.png)
-![MAC table after ping](Wireshark_Traffic_Analysis/Screenshots/19_mac_table_after_ping.png)
+![ARP request before ICMP](Wireshark_Traffic_Analysis/Screenshot/02_arp_request_frame16.png)
+![MAC table after ping](Wireshark_Traffic_Analysis/Screenshot/19_mac_table_after_ping.png)
 
 ---
 
