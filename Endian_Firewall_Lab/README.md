@@ -81,7 +81,7 @@ The lab mainly uses **GREEN ↔ RED** traffic.
 
 ## 1. Firewall Hardware and Cabling
 
-![Firewall hardware back panel](Screenshots/01-hardware-back-panel.jpg)
+![Firewall hardware back panel](Screenshot/01-hardware-back-panel.jpg)
 
 The physical system was prepared with multiple network interfaces.
 
@@ -107,7 +107,7 @@ Incorrect interface assignment can make an otherwise correct firewall configurat
 
 ## 2. Select the Installer Language
 
-![Installer language selection](Screenshots/02-installer-language-selection.jpg)
+![Installer language selection](Screenshot/02-installer-language-selection.jpg)
 
 The Endian Firewall installer was started and the installation language was selected.
 
@@ -121,7 +121,7 @@ EFW 3.3.2 Community Edition
 
 ## 3. Start the Installation
 
-![Endian installer welcome](Screenshots/03-installer-welcome.jpg)
+![Endian installer welcome](Screenshot/03-installer-welcome.jpg)
 
 The installer displayed the welcome screen before beginning the disk and system configuration process.
 
@@ -131,7 +131,7 @@ This is the point where the installation process is confirmed before changes are
 
 ## 4. Detect the Installation Disk
 
-![Installer detecting disks](Screenshots/04-installer-detecting-disks.jpg)
+![Installer detecting disks](Screenshot/04-installer-detecting-disks.jpg)
 
 The installer scanned the system for available storage devices.
 
@@ -143,7 +143,7 @@ Endian must identify a valid disk before it can create the partitions required f
 
 ## 5. Confirm Disk Erasure Warning
 
-![Installer disk warning](Screenshots/05-installer-disk-warning.jpg)
+![Installer disk warning](Screenshot/05-installer-disk-warning.jpg)
 
 The installer displayed a warning that the selected disk would be prepared for Endian and existing data would be removed.
 
@@ -163,7 +163,7 @@ No required data remains on the disk
 
 ## 6. Disk Partitioning
 
-![Installer partitioning](Screenshots/06-installer-partitioning.jpg)
+![Installer partitioning](Screenshot/06-installer-partitioning.jpg)
 
 The installer created the required disk partitions and file systems.
 
@@ -175,7 +175,7 @@ At this stage, the appliance storage is being prepared for the Endian operating 
 
 ## 7. Configure the GREEN Interface Address
 
-![GREEN IP configuration](Screenshots/07-installer-green-ip-entry.jpg)
+![GREEN IP configuration](Screenshot/07-installer-green-ip-entry.jpg)
 
 The GREEN interface was configured with:
 
@@ -210,7 +210,7 @@ https://192.168.8.15:10443
 
 ## 8. Run Post-Installation Procedures
 
-![Post-installation procedures](Screenshots/08-installer-post-install-procedures.jpg)
+![Post-installation procedures](Screenshot/08-installer-post-install-procedures.jpg)
 
 After the base operating system was installed, Endian ran the remaining post-installation tasks.
 
@@ -220,7 +220,7 @@ These procedures finalize the appliance configuration before first boot.
 
 ## 9. Serial Console Option
 
-![Serial console prompt](Screenshots/09-installer-serial-console-prompt.jpg)
+![Serial console prompt](Screenshot/09-installer-serial-console-prompt.jpg)
 
 The installer asked whether a console should also be available over the serial interface.
 
@@ -237,7 +237,7 @@ A serial console provides an alternative management method when:
 
 ## 10. Installation Completed
 
-![Installation completed](Screenshots/10-installer-congratulations.jpg)
+![Installation completed](Screenshot/10-installer-congratulations.jpg)
 
 The installer confirmed that Endian Firewall was successfully installed.
 
@@ -265,7 +265,7 @@ https://192.168.8.15:10443
 
 ## 11. First Boot Console
 
-![First boot console](Screenshots/11-console-first-boot-empty-config.jpg)
+![First boot console](Screenshot/11-console-first-boot-empty-config.jpg)
 
 After installation, the console menu was displayed.
 
@@ -288,7 +288,7 @@ If the browser GUI is unavailable, the local console provides a recovery and con
 
 ## 12. Run the Network Configuration Wizard
 
-![Console network wizard](Screenshots/12-console-cli-network-wizard.jpg)
+![Console network wizard](Screenshot/12-console-cli-network-wizard.jpg)
 
 The console-based network configuration wizard was used to configure interface roles and network parameters.
 
@@ -302,7 +302,7 @@ A firewall must know which NIC belongs to each security zone before it can corre
 
 ## 13. Verify the Final Console Summary
 
-![Final console network summary](Screenshots/13-console-final-summary.jpg)
+![Final console network summary](Screenshot/13-console-final-summary.jpg)
 
 After the network wizard completed, the console showed the final operational state.
 
@@ -332,7 +332,7 @@ The appliance now has the minimum Layer-3 configuration required to route/firewa
 
 ## 14. Select Network Mode
 
-![Network wizard step 1](Screenshots/14-wizard-step1-network-mode.png)
+![Network wizard step 1](Screenshot/14-wizard-step1-network-mode.png)
 
 The Endian web-based Network Configuration wizard was opened.
 
@@ -346,7 +346,7 @@ The network mode determines how Endian treats the upstream connection and how th
 
 ## 15. Configure Network Zones
 
-![Network wizard zones](Screenshots/15-wizard-step2-zones.png)
+![Network wizard zones](Screenshot/15-wizard-step2-zones.png)
 
 The zone configuration step shows the available Endian security zones:
 
@@ -368,7 +368,7 @@ BLUE   → Wireless or less-trusted network
 
 ## 16. Configure GREEN Preferences
 
-![GREEN preferences](Screenshots/16-wizard-step3-green-prefs.png)
+![GREEN preferences](Screenshot/16-wizard-step3-green-prefs.png)
 
 The GREEN network preferences were reviewed/configured.
 
@@ -382,7 +382,7 @@ If the wrong NIC is assigned to GREEN, administrators or clients may lose access
 
 ## 17. Configure RED / Uplink Preferences
 
-![RED preferences](Screenshots/17-wizard-step4-red-prefs.png)
+![RED preferences](Screenshot/17-wizard-step4-red-prefs.png)
 
 The RED side was configured as the uplink toward the external network.
 
@@ -398,7 +398,7 @@ Traffic traveling from GREEN toward RED is controlled by outgoing firewall rules
 
 ## 18. Configure DNS
 
-![DNS configuration](Screenshots/18-wizard-step5-dns.png)
+![DNS configuration](Screenshot/18-wizard-step5-dns.png)
 
 The DNS stage of the wizard was reviewed/configured.
 
@@ -427,7 +427,7 @@ DNS resolution
 
 ## 19. Dashboard Overview
 
-![Endian dashboard](Screenshots/19-dashboard-overview.png)
+![Endian dashboard](Screenshot/19-dashboard-overview.png)
 
 The Endian dashboard was used to verify the overall appliance state.
 
@@ -452,7 +452,7 @@ For example, if the RED uplink is not active, changing application-level firewal
 
 ## 20. Create an ICMP Firewall Rule
 
-![ICMP firewall rule creation](Screenshots/20-firewall-icmp-rule-create.png)
+![ICMP firewall rule creation](Screenshot/20-firewall-icmp-rule-create.png)
 
 An outgoing firewall rule was created for ICMP traffic.
 
@@ -494,7 +494,7 @@ What action should be taken
 
 ## 21. Verify the Outgoing Firewall Rule List
 
-![Firewall rules list](Screenshots/21-firewall-rules-list.png)
+![Firewall rules list](Screenshot/21-firewall-rules-list.png)
 
 The outgoing firewall policy table shows multiple GREEN-to-RED rules.
 
@@ -518,7 +518,7 @@ When troubleshooting, always check:
 
 ## 22. Client Ping Test — Before and After Policy Behavior
 
-![Client ping before and after](Screenshots/22-client-ping-test-before-after.png)
+![Client ping before and after](Screenshot/22-client-ping-test-before-after.png)
 
 The client used:
 
@@ -541,7 +541,7 @@ This provides stronger evidence than only showing the firewall configuration pag
 
 ## 22B. Physical Client Test Evidence
 
-![Physical client ping test](Screenshots/22b-client-ping-test-photo.jpg)
+![Physical client ping test](Screenshot/22b-client-ping-test-photo.jpg)
 
 A photo of the client command prompt records the same practical ICMP testing on the real lab machine.
 
@@ -555,7 +555,7 @@ The firewall changes were validated from an endpoint, not only observed inside t
 
 ## 23. Enable and Configure the HTTP Proxy
 
-![HTTP proxy configuration](Screenshots/23-proxy-http-config.png)
+![HTTP proxy configuration](Screenshot/23-proxy-http-config.png)
 
 The HTTP proxy configuration page was opened and the proxy was enabled/configured for the GREEN network.
 
@@ -585,7 +585,7 @@ The later web-filter profile and access policy are applied through the HTTP prox
 
 ## 24. Configure Web-Filter Categories
 
-![Web filter categories](Screenshots/24-webfilter-profile-categories.png)
+![Web filter categories](Screenshot/24-webfilter-profile-categories.png)
 
 A web-filter profile was configured using category-based filtering.
 
@@ -607,7 +607,7 @@ This is more scalable than maintaining only individual domain lists.
 
 ## 25. Configure a Custom Blacklist
 
-![Web filter blacklist](Screenshots/25-webfilter-blacklist.png)
+![Web filter blacklist](Screenshot/25-webfilter-blacklist.png)
 
 The custom blacklist section was used to specify individual websites/domains that should be blocked.
 
@@ -632,7 +632,7 @@ Specific control → Blacklist
 
 ## 26. Create an Access Policy
 
-![HTTP proxy access policy creation](Screenshots/26-access-policy-create.png)
+![HTTP proxy access policy creation](Screenshot/26-access-policy-create.png)
 
 An HTTP proxy access policy was created for the internal network.
 
@@ -668,7 +668,7 @@ This is similar to how a firewall rule ties objects and services to an action.
 
 ## 27. Verify the Access Policy
 
-![HTTP proxy access policy list](Screenshots/27-access-policy-list.png)
+![HTTP proxy access policy list](Screenshot/27-access-policy-list.png)
 
 The access-policy list shows the configured filtering policy as an active entry.
 
@@ -687,7 +687,7 @@ At this stage:
 
 ## 30. Live Logs Overview
 
-![Live logs overview](Screenshots/30-live-logs-overview.png)
+![Live logs overview](Screenshot/30-live-logs-overview.png)
 
 The live-log view displays real-time events generated by the firewall and its services.
 
@@ -703,7 +703,7 @@ Instead of guessing whether traffic reached the firewall, the administrator can 
 
 ## 31. Filtered Live Logs
 
-![Filtered live logs](Screenshots/31-live-logs-filtered.png)
+![Filtered live logs](Screenshot/31-live-logs-filtered.png)
 
 The live-log view was filtered to focus on relevant traffic/events.
 
@@ -729,7 +729,7 @@ This makes troubleshooting much faster.
 
 ## 32. Firewall Log Table
 
-![Firewall logs](Screenshots/32-firewall-logs-table.png)
+![Firewall logs](Screenshot/32-firewall-logs-table.png)
 
 The firewall log table shows traffic records with fields such as:
 
